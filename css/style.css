@@ -1,0 +1,412 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&family=Viga&display=swap');
+
+::-webkit-scrollbar{
+    background-color: #001101;
+    width:6px;
+}
+::-webkit-scrollbar-thumb{
+    background-color: #33992f;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+*{
+    margin:0;
+    padding:0;
+}
+
+body{
+    background-color: #000;
+}
+
+.conteudo{
+    padding:4vw 15vw 4vw 15vw;
+    display:flex;
+    flex-direction: column;
+    gap:8vw;
+}
+
+h2{
+    color:#fff;
+    font-size:1.6vw;
+    font-family:"Viga", arial;
+    font-weight:bold;
+    text-transform:capitalize;
+}
+h3{
+    color:#33992f;
+    font-size:1.3vw;
+    font-family:"Viga", arial;
+    text-transform:capitalize;
+}
+
+p{
+    color:#fff;
+    font-size:1vw;
+    font-family:"Raleway", arial;
+    line-height: 1.5vw;
+}
+
+b{
+    color:#33992f;
+}
+
+header{
+    background-image: linear-gradient(#000, transparent);
+    width:100%;
+    height:8vh;
+    display:flex;
+    align-items:center;
+    justify-content: space-around;
+    position: fixed;
+    z-index:2;
+}
+
+header .logo{
+    font-size:1.5vw;
+    color:#fff;
+    transition: 0.2s;
+}
+header .logo:hover{
+    color:#33992f;
+}
+
+header nav{
+    display:flex;
+    gap:5vw;
+    align-items: center;
+}
+
+header nav a{
+    color:#fff;
+    text-decoration: none;
+    font-size:0.8vw;
+    font-family:"Raleway", arial;
+    transition: 0.5s;
+}
+header nav a:hover{
+    scale:1.1;
+}
+
+header nav .navDestaque{
+    background-color: #33992f;
+    padding:0.4vw 1vw 0.4vw 1vw;
+    border-radius: 0.2rem;
+}
+header nav .navDestaque:hover{
+    background-color: #fff;
+    color:#33992f;
+}
+
+#inicio{
+    background-image: url(../img/natureza.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    height:80vh;
+}
+
+.inicio_container{
+    height:100%;
+    width:100%;
+    background-image: linear-gradient(-90deg, #000, #0000009a 70%, transparent);
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+    justify-content: center;
+    gap:2vh;
+    padding-top:4vh;
+}
+.inicio_container h1{
+    text-transform: uppercase;
+    color:#fff;
+    font-weight: bold;
+    font-family:"Viga", arial black;
+    font-size:2.5vw;
+    padding-right:8vw;
+    text-align: right;
+}
+.inicio_container p{
+    color:#fff;
+    font-family:"Raleway", arial;
+    font-size:1vw;
+    width:35vw;
+    text-align: right;
+    padding-right:8vw;
+}
+.inicio_container .inicio_btn{
+    padding-right:8vw;
+    display: flex;
+    gap:2vw;
+    margin-top:2vw;
+}
+.inicio_container .inicio_btn .btn1{
+    background-color: #33992f;
+    border:none;
+    font-size:1vw;
+    color:#fff;
+    padding:0.5vw;
+    width:12vw;
+    transition: 0.5s;
+    cursor:pointer;
+}
+.inicio_container .inicio_btn .btn1:hover{
+    scale:1.1;
+    background-color: #fff;
+    color:#33992f;
+}
+.inicio_container .inicio_btn .btn2{
+    background-color: transparent;
+    border:2px solid #33992f;
+    font-size:1vw;
+    color:#33992f;
+    padding:0.5vw;
+    width:12vw;
+    transition: 0.5s;
+    cursor:pointer;
+}
+.inicio_container .inicio_btn .btn2:hover{
+    scale:1.1;
+    border:2px solid #fff;
+    color:#fff;
+}
+.setaInicio{
+    animation: corSetaInicio 2s infinite;
+    width:2.5vw;
+    height: 2.5vw;
+    display:flex;
+    align-items:center;
+    justify-content: center;
+    background-color: #33992f;
+    border:10px solid #000;
+    color: #fff;
+    font-size:1.5vw;
+    border-radius:100%;
+    text-align:center;
+    margin:-1.5vw auto 0 auto;
+    text-decoration: none;
+}
+
+@keyframes corSetaInicio{
+    0%{
+        background-color: #33992f;
+    }
+    50%{
+        background-color: #066403;
+    }
+    100%{
+        background-color: #33992f;
+    }
+}
+
+/* Animais */
+#animais{
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.animais_conteudo{
+    width:28vw;
+    display:flex;
+    flex-direction: column;
+    gap:1vw;
+}
+.animais_img{
+    width:30vw;
+}
+.animais_list{
+    display:flex;
+    align-items: center;
+    gap:1vw;
+}
+.animais_list p{
+    font-size:0.9vw;
+}
+.animais_list i{
+    font-size:1vw;
+    color:#fff;
+    background-color: #33992f;
+    border-radius:100%;
+    padding:0.5vw;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Meio Ambiente */
+#meioAmbiente{
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    gap:2vw;
+}
+.meioAmbiente_img{
+    width:50vw;
+    height:25vw;
+    object-fit: cover;
+    border-radius: 1rem;
+}
+.meioAmbiente_fundoImg{
+    width:20vw;
+    height:15vw;
+    background-color: #33992f;
+    border-radius: 2vw;
+    opacity: 25%;
+    position: absolute;
+    left:17vw;
+    margin-top: 1vw;
+    z-index:-1;
+}
+.meioAmbiente_fundoImg2{
+    width:16vw;
+    height:15vw;
+    background-color: #33992f;
+    border-radius: 4vw;
+    opacity: 20%;
+    position: absolute;
+    right:16vw;
+    margin-top: 18vw;
+    z-index:-1;
+}
+
+#meioAmbiente .meioAmbiente_text{
+    width:70%;
+    text-align:center;
+}
+
+.meioAmbiente_cards{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    gap:0.5vw;
+}
+.meioAmbiente_cards .card{
+    width:9vw;
+    height:2.5vw;
+    background-color: rgba(6, 100, 3, 0.842);
+    display:flex;
+    align-items:center;
+    justify-content: center;
+    gap:0.5vw;
+    padding:0.5vw;
+    border-radius: 0.5vw;
+}
+.meioAmbiente_cards .card p{
+    font-size:0.6vw;
+    text-align:left;
+    line-height:1vw;
+}
+.meioAmbiente_cards .card i{
+    background-color:#fff;
+    color:#33992f;
+    border-radius:100%;
+    padding:0.4vw;
+    font-size:1vw;
+}
+
+/* Destruição */
+#destruicao{
+    display:flex;
+    align-items:center;
+    justify-content: center;
+    gap:5vw;
+}
+.destruicao_imgs{
+    display:flex;
+    gap:0.5vw;
+    border-radius: 2vw;
+    overflow: hidden;
+}
+#destruicao .destruicao_imgs img{
+    width:12vw;
+    height:20vw;
+    object-fit: cover;
+    object-position: left;
+}
+.destruicao_conteudo{
+    width:20vw;
+    display:flex;
+    flex-direction: column;
+    gap:1vw;
+}
+
+/* Beneficios */
+#beneficios{
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    gap:4vw;
+}
+
+#beneficios .swiper{
+    width:100%;
+    height:25vw;
+    padding-bottom:1vw;
+}
+
+#beneficios .swiper-button-prev, #beneficios .swiper-button-next{
+    color:#fff;
+}
+#beneficios .swiper-button-prev::after, #beneficios .swiper-button-next::after{
+    font-size:2vw;
+    font-weight:900;
+}
+
+#beneficios .swiper .swiper-pagination-bullet{
+    width:0.6vw;
+    height:0.6vw;
+    background-color: #33992f !important;
+}
+#beneficios .swiper .swiper-pagination-bullet-active{
+    background-color: #33992f;
+}
+
+#beneficios .swiper-slide{
+    width:25vw;
+}
+
+.beneficios_conteudo{
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    border-radius:1vw;
+    width:25vw;
+    height:18vw;
+    border:0.5px solid #33992f;
+}
+
+.beneficios_text{
+    width:100%;
+    height:100%;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content:end;
+    border-radius:1vw;
+    gap:0.5vw;
+    text-align: center;
+    background-image: linear-gradient(0deg, #000, #000000dc 50%, transparent);
+}
+.beneficios_text h3, .beneficios_text p{
+    padding:0vw 1vw;
+}
+.beneficios_text p{
+    padding-bottom: 2vw;
+}
+
+footer{
+    width:100%;
+    background-color:#227e1f21;
+    height:2vw;
+    font-family:"Raleway", arial;
+    font-size:0.6vw;
+    font-weight: bold;
+    color:#fff;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    text-transform: uppercase;
+}
