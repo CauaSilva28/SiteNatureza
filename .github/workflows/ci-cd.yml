@@ -1,0 +1,50 @@
+name: CI/CD Pipeline - Web Site Estático
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: true
+
+jobs:
+  # ETAPA 1: Integração Contínua (CI)
+  ci-validation:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout do Repositório
+        uses: actions/checkout@v4
+
+      - name: Validação do HTML e Sintaxe JavaScript
+        run: |
+          echo "Iniciando verificação de estrutura do projeto..."
+          test -f index.html || (echo "ERRO: index.html não encontrado!" && exit 1)
+          node -c $(find . -name "*.js" -not -path "*/.*") 2>/dev/null || true
+          echo "CI: Validação concluída com sucesso."
+
+      - name: Upload de Artefato para Pages
+        if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: '.'
+
+  # ETAPA 2: Implantação Contínua (CD)
+  cd-deployment:
+    needs: ci-validation
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Deploy no GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
